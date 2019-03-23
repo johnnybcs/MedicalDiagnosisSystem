@@ -1,7 +1,7 @@
 package model;
 
         import static model.Root.DOCTOR_NAME;
-        import static model.Root.textArea;
+import static model.Root.textArea;
 
 public class Doctor {
 
