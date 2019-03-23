@@ -21,24 +21,25 @@ public class Root {
     public static TextArea textArea;
     public static TextField textField;
 
-    private VBox vBox;
+    public VBox vBox;
     private static String userInput;
+    public static int questionNumber;
 
 
     private Doctor doctor;
 
     public Parent createRoot() {
         doctor = new Doctor();
+        questionNumber = 0;
 
         textArea = new TextArea();
         textArea.setEditable(false);
         textArea.setPrefHeight(TEXT_AREA_HEIGHT);
         textArea.setWrapText(true);
-        textArea.setText(DOCTOR_NAME + "How are you doing?\n");
+        textArea.setText(DOCTOR_NAME + "Tell me what I can help you with today.\n");
 
-        textField = new
+        textField = new TextField();
 
-                TextField();
 
         textField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -51,7 +52,7 @@ public class Root {
                     ActionListener actionListener = new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
-                            doctor.reply(userInput);
+                            doctor.reply(userInput, questionNumber);
                         }
                     };
                     Timer timer = new Timer(850, actionListener);
