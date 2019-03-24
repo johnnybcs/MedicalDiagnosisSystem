@@ -7,10 +7,12 @@
 <B>Examples:</B>
 \
 <I>Diagnosis of an upper respiratory tract infection</I>
+\
 <img width="496" alt="2" src="https://user-images.githubusercontent.com/47739019/54882997-855d1980-4e1d-11e9-8b91-c2cc0748f6b1.png">
 
 \
 <I>Diagnosis of gastroesophageal reflux disease</I>
+\
 <img width="498" alt="1" src="https://user-images.githubusercontent.com/47739019/54882996-855d1980-4e1d-11e9-8fc4-edec1cbcc4c4.png">
 
 \
