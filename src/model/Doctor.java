@@ -283,19 +283,19 @@ public class Doctor {
     private String getDescription() {
         switch (this.diagnosis) {
             case ("an upper respiratory infection"):
-                return "Also known as the common cold, this illness is caused by a viral infection and spread.";
+                return "Also known as the common cold, this illness is caused by a viral infection of your upper respiratory tract.";
             case ("a chronic obstructive pulmonary disease exacerbation"):
                 return "COPD is a progressive lung disease characterized by non-reversible breathlessness. The most common type of COPD is caused by smoking.";
             case ("pneumonia"):
                 return "Pneumonia is an infection of the air sacs in the lungs.";
             case ("chronic bronchitis"):
-                return "";
+                return "Chronic bronchitis is an inflammation of the airways that carry air to and from your lungs.";
             case ("postnasal drip"):
-                return "";
-            case ("postInfection cough"):
-                return "";
+                return "Postnasal drip is a buildup of mucus at the back of your nose and throat.";
+            case ("a postInfection cough"):
+                return "A cough that persists after a viral respiratory infection is called a post-infection cough.";
             case ("gastroesophageal reflux disease"):
-                return "";
+                return "GERD occurs when acid from your stomach frequently flows back into your esophagus, the tube connecting your mouth to your stomach.";
             default:
                 return "";
         }
@@ -310,13 +310,13 @@ public class Doctor {
             case ("pneumonia"):
                 return "It is treated with antibiotics.";
             case ("chronic bronchitis"):
-                return "";
+                return "Inhaled bronchodilators and corticosteroids can reduce inflammation and open the narrowed passages in your lungs.";
             case ("postnasal drip"):
-                return "";
+                return "You can use saline nasal sprays or irrigation to flush irritants, such mucus, allergens, and bacteria, out of your sinuses.";
             case ("postInfection cough"):
-                return "";
+                return "Inhale anticholinergics and steroids can be used to control it.";
             case ("gastroesophageal reflux disease"):
-                return "";
+                return "You may be able to control GERD by reducing your intake of greasy or spicy foods and alcoholic drinks, not overeating, and not eating 2 hours before bedtime.";
             default:
                 return "";
         }
