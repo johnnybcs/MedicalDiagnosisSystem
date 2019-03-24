@@ -17,7 +17,7 @@ public class Root {
 
     public static final String DOCTOR_NAME = "Doctor:  ";
     public static final String USER_NAME = "You:  ";
-    public static final int TEXT_AREA_HEIGHT = 600;
+    public static final int TEXT_AREA_HEIGHT = 450;
     public static TextArea textArea;
     public static TextField textField;
 
@@ -36,7 +36,7 @@ public class Root {
         textArea.setEditable(false);
         textArea.setPrefHeight(TEXT_AREA_HEIGHT);
         textArea.setWrapText(true);
-        textArea.setText(DOCTOR_NAME + "Tell me what I can help you with today.\n");
+        textArea.setText(DOCTOR_NAME + "What I can help you with today?\n");
 
         textField = new TextField();
 
@@ -52,12 +52,10 @@ public class Root {
                     ActionListener actionListener = new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent ae) {
-                            doctor.reply(userInput, questionNumber);
+                            doctor.reply(userInput);
                         }
                     };
-                    Timer timer = new Timer(850, actionListener);
-                    timer.setRepeats(false);
-                    timer.start();
+                    pause(actionListener);
                 }
             }
         });
@@ -67,5 +65,11 @@ public class Root {
         vBox.setMargin(textField, new Insets(10, 10, 10, 10));
 
         return vBox;
+    }
+
+    private void pause(ActionListener actionListener) {
+        Timer timer = new Timer(850, actionListener);
+        timer.setRepeats(false);
+        timer.start();
     }
 }
