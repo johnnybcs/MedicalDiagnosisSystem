@@ -17,7 +17,6 @@
 
 \
 <B>Notes:</B>
-- The Doctor AI emulates the thinking of a doctor. He comes up with a list of most probable diagnoses based on the patient's reported symptoms. Then he asks a series of questions to narrow down the diagnosis.
-
+- The Doctor AI emulates the thinking of a doctor. He comes up with a list of the most probable diagnoses based on the patient's reported symptoms. Then he asks a series of questions to narrow down the diagnosis.
 - At the moment, the Doctor AI can only diagnose the 6 most common causes of coughs in adults. His knowledge base can be infinitely expanded in the future.
 - The accuracy of the diagnosis is limited by the lack of a physical exam, laboratory testing, and diagnostic imaging.
