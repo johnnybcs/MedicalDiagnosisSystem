@@ -196,18 +196,18 @@ public class Doctor {
                 break;
             case (2):
                 if (userInput.contains("yes")) {
-                    postInfectionCough++;
+                    postInfectionCough += 2;
                 } else {
-                    postInfectionCough--;
+                    postInfectionCough += 2;
                 }
                 doctorResponse("Do you have heartburn, a burning sensation in you chest?");
 
                 break;
             case (3):
                 if (userInput.contains("yes")) {
-                    gerd++;
+                    gerd += 2;
                 } else {
-                    gerd--;
+                    gerd -= 2;
                 }
                 doctorResponse("Do you feel like you have a something in your throat?");
 
