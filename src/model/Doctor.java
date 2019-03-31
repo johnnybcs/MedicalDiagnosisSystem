@@ -7,14 +7,16 @@ import static model.Root.DOCTOR_NAME;
 import static model.Root.textArea;
 
 public class Doctor {
-    private static int uri;
-    private static int copd;
-    private static int pneumonia;
 
-    private static int chronicBronchitis;
-    private static int postnasalDrip;
-    private static int postInfectionCough;
-    private static int gerd;
+    private static Disease uri;
+    private static Disease copd;
+    private static Disease pneumonia;
+
+    private static Disease chronicBronchitis;
+    private static Disease postnasalDrip;
+    private static Disease postInfectionCough;
+    private static Disease gerd;
+
     private static int duration;
     private static boolean chronic;
 
@@ -22,13 +24,15 @@ public class Doctor {
 
 
     public Doctor() {
-        uri = 0;
-        copd = 0;
-        pneumonia = 0;
-        chronicBronchitis = 0;
-        postnasalDrip = 0;
-        postInfectionCough = 0;
-        gerd = 0;
+
+        uri = new Disease();
+        copd = new Disease();
+        pneumonia = new Disease();
+        chronicBronchitis = new Disease();
+        postnasalDrip = new Disease();
+        postInfectionCough = new Disease();
+        gerd = new Disease();
+
         chronic = false;
         diagnosis = "";
     }
@@ -113,74 +117,74 @@ public class Doctor {
                 break;
             case (2):
                 if (userInput.contains("yes")) {
-                    uri++;
+                    uri.updateProbability(1);
                 } else {
-                    uri--;
+                    uri.updateProbability(-1);
                 }
                 doctorResponse("Do you have a sore or scratchy throat, or a runny or congested nose?");
 
                 break;
             case (3):
                 if (userInput.contains("yes")) {
-                    uri++;
+                    uri.updateProbability(1);
                 } else {
-                    uri--;
+                    uri.updateProbability(-1);
                 }
                 doctorResponse("Do you have a fever?");
 
                 break;
             case (4):
                 if (userInput.contains("yes")) {
-                    pneumonia++;
-                    uri--;
+                    pneumonia.updateProbability(1);
+                    pneumonia.updateProbability(1);
+                    uri.updateProbability(-1);
                 } else {
-                    pneumonia--;
-                    uri++;
+                    pneumonia.updateProbability(-1);
+                    uri.updateProbability(1);
                 }
                 doctorResponse("Do you have trouble breathing?");
 
                 break;
             case (5):
                 if (userInput.contains("yes")) {
-                    pneumonia++;
-                    copd++;
-                    uri--;
+                    pneumonia.updateProbability(1);
+                    copd.updateProbability(1);
+                    uri.updateProbability(-1);
                 } else {
-                    pneumonia--;
-                    copd--;
-                    uri++;
+                    pneumonia.updateProbability(-1);
+                    copd.updateProbability(1);
+                    uri.updateProbability(1);
                 }
                 doctorResponse("Does it hurt to breathe or cough?");
 
                 break;
             case (6):
                 if (userInput.contains("yes")) {
-                    pneumonia++;
-                    uri--;
+                    pneumonia.updateProbability(1);
+                    uri.updateProbability(-1);
                 } else {
-                    pneumonia--;
-                    uri++;
+                    pneumonia.updateProbability(-1);
+                    uri.updateProbability(1);
                 }
                 doctorResponse("Do you have nausea, vomiting, or diarrhea?");
 
                 break;
             case (7):
                 if (userInput.contains("yes")) {
-                    pneumonia++;
-                    postnasalDrip++;
-                    uri--;
+                    pneumonia.updateProbability(1);
+                    uri.updateProbability(-1);
                 } else {
-                    pneumonia--;
-                    uri++;
+                    pneumonia.updateProbability(-1);
+                    uri.updateProbability(1);
                 }
                 doctorResponse("Do you smoke?");
 
                 break;
             case (8):
                 if (userInput.contains("yes")) {
-                    copd += 2;
+                    copd.updateProbability(2);
                 } else {
-                    copd -= 2;
+                    copd.updateProbability(-2);
                 }
                 getDiagnosis();
                 doctorResponse("You most likely have " + this.diagnosis + ". " + getDescription() + " " + getTreatment());
@@ -196,65 +200,66 @@ public class Doctor {
                 break;
             case (2):
                 if (userInput.contains("yes")) {
-                    postInfectionCough += 2;
+                    postInfectionCough.updateProbability(2);
+                    postInfectionCough.updateProbability(2);
                 } else {
-                    postInfectionCough += 2;
+                    postInfectionCough.updateProbability(-3);
                 }
                 doctorResponse("Do you have heartburn, a burning sensation in you chest?");
 
                 break;
             case (3):
                 if (userInput.contains("yes")) {
-                    gerd += 2;
+                    gerd.updateProbability(2);
                 } else {
-                    gerd -= 2;
+                    gerd.updateProbability(-2);
                 }
                 doctorResponse("Do you feel like you have a something in your throat?");
 
                 break;
             case (4):
                 if (userInput.contains("yes")) {
-                    gerd++;
-                    postnasalDrip++;
+                    gerd.updateProbability(1);
+                    postnasalDrip.updateProbability(1);
                 } else {
-                    gerd--;
-                    postnasalDrip--;
+                    gerd.updateProbability(-1);
+                    postnasalDrip.updateProbability(-1);
                 }
                 doctorResponse("Is your cough worse at night?");
 
                 break;
             case (5):
                 if (userInput.contains("yes")) {
-                    postnasalDrip++;
+                    postnasalDrip.updateProbability(1);
                 } else {
-                    postnasalDrip--;
+                    postnasalDrip.updateProbability(-1);
                 }
                 doctorResponse("Do you have bad breath?");
 
                 break;
             case (6):
                 if (userInput.contains("yes")) {
-                    postnasalDrip++;
+                    postnasalDrip.updateProbability(1);
                 } else {
-                    postnasalDrip--;
+                    postnasalDrip.updateProbability(-1);
                 }
                 doctorResponse("Do you often clear your throat?");
 
                 break;
             case (7):
                 if (userInput.contains("yes")) {
-                    postnasalDrip++;
+                    postnasalDrip.updateProbability(1);
                 } else {
-                    postnasalDrip--;
+                    postnasalDrip.updateProbability(-1);
                 }
                 doctorResponse("Do you have trouble breathing?");
 
                 break;
             case (8):
                 if (userInput.contains("yes")) {
-                    chronicBronchitis++;
+                    chronicBronchitis.updateProbability(1);
                 } else {
-                    chronicBronchitis--;
+                    chronicBronchitis.updateProbability(-1);
                 }
                 getDiagnosis();
                 doctorResponse("You most likely have " + this.diagnosis + ". " + getDescription() + " " + getTreatment());
@@ -262,7 +267,7 @@ public class Doctor {
     }
 
     private void getDiagnosis() {
-        Map<String, Integer> diagnoses = new HashMap<>();
+        Map<String, Disease> diagnoses = new HashMap<>();
         diagnoses.put("an upper respiratory infection", uri);
         diagnoses.put("a chronic obstructive pulmonary disease exacerbation", copd);
         diagnoses.put("pneumonia", pneumonia);
@@ -272,9 +277,9 @@ public class Doctor {
         diagnoses.put("gastroesophageal reflux disease", gerd);
 
         int max = -100;
-        for (Map.Entry<String, Integer> entry : diagnoses.entrySet()) {
-            if (max < entry.getValue()) {
-                max = entry.getValue();
+        for (Map.Entry<String, Disease> entry : diagnoses.entrySet()) {
+            if (max < entry.getValue().getProbability()) {
+                max = entry.getValue().getProbability();
                 this.diagnosis = entry.getKey();
             }
         }
