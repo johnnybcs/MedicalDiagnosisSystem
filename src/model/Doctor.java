@@ -319,7 +319,7 @@ public class Doctor {
             case ("postnasal drip"):
                 return "You can use saline nasal sprays or irrigation to flush irritants, such mucus, allergens, and bacteria, out of your sinuses.";
             case ("postInfection cough"):
-                return "Inhale anticholinergics and steroids can be used to control it.";
+                return "Inhaled anticholinergics and steroids can be used to control it.";
             case ("gastroesophageal reflux disease"):
                 return "You may be able to control GERD by reducing your intake of greasy or spicy foods and alcoholic drinks, not overeating, and not eating 2 hours before bedtime.";
             default:
