@@ -1,6 +1,8 @@
 # MedicalDiagnosisSystem
 <B>Purpose:</B> This chatbot can diagnose medical diseases.
 
+<B>Technologies Used:</B> Java and JavaFX
+
 <B>Instructions:</B> Tell the chatbot about your symptoms. It will try its best to diagnose the root of your problems and suggest a treatment.
 
 \
